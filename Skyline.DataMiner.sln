@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation", "Automation\Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function", "Function\Function.csproj", "{01400EDF-9F32-4DE7-9CD7-4DB5F89BB33A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSchemas", "XmlSchemas\XmlSchemas.csproj", "{C3071ED0-AA5E-4C69-8936-E0A924F5AA8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{01400EDF-9F32-4DE7-9CD7-4DB5F89BB33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01400EDF-9F32-4DE7-9CD7-4DB5F89BB33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01400EDF-9F32-4DE7-9CD7-4DB5F89BB33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3071ED0-AA5E-4C69-8936-E0A924F5AA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3071ED0-AA5E-4C69-8936-E0A924F5AA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3071ED0-AA5E-4C69-8936-E0A924F5AA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3071ED0-AA5E-4C69-8936-E0A924F5AA8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
