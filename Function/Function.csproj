@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyName>Skyline.DataMiner.XSD</AssemblyName>
-		<RootNamespace>Skyline.DataMiner.XSD</RootNamespace>
+		<AssemblyName>Skyline.DataMiner.XmlSchemas.Function</AssemblyName>
+		<RootNamespace>Skyline.DataMiner.XmlSchemas.Function</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>SkylineCommunications</Authors>
@@ -13,10 +13,10 @@
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://skyline.be/</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/SkylineCommunications/Skyline.DataMiner.XSD</RepositoryUrl>
+		<RepositoryUrl>https://github.com/SkylineCommunications/Skyline.DataMiner.XmlSchemas</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Skyline;DataMiner;XSD</PackageTags>
-		<Description>Library containing the XSDs.</Description>
+		<Description>Library containing the XSDs related to functions.</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -33,8 +33,8 @@
 
 	<ItemGroup>
 		<None Include="..\README.md">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
 		</None>
 		<None Include="..\_NuGetItems\icon.png">
 			<Pack>True</Pack>
@@ -45,4 +45,5 @@
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
+
 </Project>
