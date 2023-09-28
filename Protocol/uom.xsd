@@ -2774,6 +2774,15 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Flows">
+                <xs:annotation>
+                    <xs:documentation>flows</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>flows</slu:name>
+                        <slu:ignoreInDescription>true</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="fm">
                 <xs:annotation>
                     <xs:documentation>femtometer</xs:documentation>
