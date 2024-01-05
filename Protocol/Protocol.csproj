@@ -46,4 +46,8 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="Skyline.DataMiner.CICD.Validators.Common" />
+	</ItemGroup>
+
 </Project>

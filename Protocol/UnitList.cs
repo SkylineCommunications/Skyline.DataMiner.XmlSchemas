@@ -18,7 +18,7 @@
 		/// Initializes a new instance of the <see cref="UnitList"/> class.
 		/// The default UOM file will be used.
 		/// </summary>
-		public UnitList()
+		internal UnitList()
 		{
 			LoadUomXsd(GetUomFilePath());
 		}
