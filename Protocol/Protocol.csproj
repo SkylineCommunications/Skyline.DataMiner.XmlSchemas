@@ -1,53 +1,53 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyName>Skyline.DataMiner.XmlSchemas.Protocol</AssemblyName>
-		<RootNamespace>Skyline.DataMiner.XmlSchemas.Protocol</RootNamespace>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Authors>SkylineCommunications</Authors>
-		<Company>Skyline Communications</Company>
-		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageProjectUrl>https://skyline.be/</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/SkylineCommunications/Skyline.DataMiner.XmlSchemas</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageTags>Skyline;DataMiner;XSD</PackageTags>
-		<Description>Library containing the XSDs related to protocols.</Description>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Skyline.DataMiner.XmlSchemas.Protocol</AssemblyName>
+    <RootNamespace>Skyline.DataMiner.XmlSchemas.Protocol</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>SkylineCommunications</Authors>
+    <Company>Skyline Communications</Company>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://skyline.be/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SkylineCommunications/Skyline.DataMiner.XmlSchemas</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Skyline;DataMiner;XSD</PackageTags>
+    <Description>Library containing the XSDs related to protocols.</Description>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<None Remove="*.xsd" />
-	</ItemGroup>
+  <ItemGroup>
+    <None Remove="*.xsd" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<Content Include="*.xsd">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<PackageCopyToOutput>true</PackageCopyToOutput>
-			<PackagePath>contentFiles\any\any\Skyline\XSD;content\Skyline\XSD</PackagePath>
-		</Content>
-	</ItemGroup>
+  <ItemGroup>
+    <Content Include="*.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackagePath>contentFiles\any\any\Skyline\XSD;content\Skyline\XSD</PackagePath>
+    </Content>
+  </ItemGroup>
 
-	<ItemGroup>
-		<None Include="..\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-		<None Include="..\_NuGetItems\icon.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-		<None Include="..\_NuGetItems\LICENSE.txt">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\_NuGetItems\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\_NuGetItems\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
-	<ItemGroup>
-		<InternalsVisibleTo Include="Skyline.DataMiner.CICD.Validators.Common" />
-	</ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Skyline.DataMiner.CICD.Validators.Common" />
+  </ItemGroup>
 
 </Project>

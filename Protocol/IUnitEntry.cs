@@ -6,12 +6,12 @@
     /// Represents a unit.
     /// </summary>
     public interface IUnitEntry
-	{
+    {
         /// <summary>
         /// Gets the name of the unit.
         /// </summary>
         string Name { get; }
-        
+
         /// <summary>
         /// Gets the value of the unit.
         /// </summary>
@@ -26,5 +26,5 @@
         /// Gets the legacy notations.
         /// </summary>
         IList<string> LegacyNotations { get; }
-	}
+    }
 }

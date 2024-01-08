@@ -7,190 +7,190 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     version="9.5.3.0"
 >
-	<xs:simpleType name="TypeNonEmptyString">
-		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="guid">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="TypeParamId">
-		<xs:union>
-			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="0"/>
-					<xs:maxInclusive value="64299"/>
-				</xs:restriction>
-			</xs:simpleType>
-			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="70000"/>
-					<xs:maxInclusive value="99999"/>
-				</xs:restriction>
-			</xs:simpleType>
-			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="1000000"/>
-					<xs:maxInclusive value="9999999"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:union>
-	</xs:simpleType>
-	<xs:simpleType  name="InputType" final="restriction">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="in" />
-			<xs:enumeration value="out" />
-			<xs:enumeration value="inout" />
-		</xs:restriction>
-	</xs:simpleType >									
-	<xs:element name="Functions">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="Version" type="ex:TypeNonEmptyString" />
-				<xs:element name="Protocol" >
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Name" type="ex:TypeNonEmptyString" />
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element maxOccurs="unbounded" name="Function">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Parameters" minOccurs="0">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element maxOccurs="unbounded" name="Parameter" minOccurs="0">
-											<xs:complexType>
-												<xs:attribute name="id" type="ex:TypeParamId" use="required" />
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="EntryPoints" minOccurs="0">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="EntryPoint" minOccurs="0">
-											<xs:complexType>
-												<xs:attribute name="pid" type="ex:TypeParamId" use="required" />
-												<xs:attribute name="type" type="xs:string" />
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ExportRules" minOccurs="0">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="ExportRule" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:documentation>
-													<![CDATA[*** No documentation available yet ***]]>
-												</xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:attribute name="attribute" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[*** No documentation available yet ***]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="name" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[In this tag, specify the name of the export rule.]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="regex" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[In this attribute, you can specify a regular expression.]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="table" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[*** No documentation available yet ***]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="tag" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[*** No documentation available yet ***]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="value" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[*** No documentation available yet ***]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="whereTag" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[In the whereTag, whereValue and whereAttribute attributes, you can specify a condition. That way, the export rule will only be applied if the condition is met.</br>
+    <xs:simpleType name="TypeNonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeParamId">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="64299"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:minInclusive value="70000"/>
+                    <xs:maxInclusive value="99999"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:minInclusive value="1000000"/>
+                    <xs:maxInclusive value="9999999"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+    <xs:simpleType  name="InputType" final="restriction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="in" />
+            <xs:enumeration value="out" />
+            <xs:enumeration value="inout" />
+        </xs:restriction>
+    </xs:simpleType >
+    <xs:element name="Functions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Version" type="ex:TypeNonEmptyString" />
+                <xs:element name="Protocol" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Name" type="ex:TypeNonEmptyString" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="Function">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Parameters" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" name="Parameter" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:attribute name="id" type="ex:TypeParamId" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="EntryPoints" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="EntryPoint" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:attribute name="pid" type="ex:TypeParamId" use="required" />
+                                                <xs:attribute name="type" type="xs:string" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ExportRules" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ExportRule" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    <![CDATA[*** No documentation available yet ***]]>
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:attribute name="attribute" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[*** No documentation available yet ***]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="name" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[In this tag, specify the name of the export rule.]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="regex" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[In this attribute, you can specify a regular expression.]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="table" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[*** No documentation available yet ***]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="tag" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[*** No documentation available yet ***]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="value" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[*** No documentation available yet ***]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="whereTag" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[In the whereTag, whereValue and whereAttribute attributes, you can specify a condition. That way, the export rule will only be applied if the condition is met.</br>
 												Example: <ExportRule table="*" ... whereTag="Protocol/Params/Param/Name" whereValue="My param" whereAttribute="id" />]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="whereValue" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[In the whereTag, whereValue and whereAttribute attributes, you can specify a condition. That way, the export rule will only be applied if the condition is met.</br>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="whereValue" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[In the whereTag, whereValue and whereAttribute attributes, you can specify a condition. That way, the export rule will only be applied if the condition is met.</br>
 										        Example: <ExportRule table="*" ... whereTag="Protocol/Params/Param/Name" whereValue="My param" whereAttribute="id" />]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-												<xs:attribute name="whereAttribute" type="xs:string">
-													<xs:annotation>
-														<xs:documentation>
-															<![CDATA[In the whereTag, whereValue and whereAttribute attributes, you can specify a condition. That way, the export rule will only be applied if the condition is met.</br>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="whereAttribute" type="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[In the whereTag, whereValue and whereAttribute attributes, you can specify a condition. That way, the export rule will only be applied if the condition is met.</br>
 										        Example: <ExportRule table="*" ... whereTag="Protocol/Params/Param/Name" whereValue="My param" whereAttribute="id" />]]>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence> 
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="Interfaces" minOccurs="0">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element minOccurs="0" maxOccurs="unbounded" name="Interface">
-											<xs:complexType>
-												<xs:attribute name="id" type="xs:integer" use="required" />
-												<xs:attribute name="name" type="ex:TypeNonEmptyString" use="required" />
-												<xs:attribute name="type" type="ex:InputType" use="required" />
-												<xs:attribute name="profile" type="ex:guid" />
-												<xs:attribute name="hidden" type="xs:string" />
-												<xs:attribute name="parameterGroupLink" type="xs:integer" />
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element minOccurs="0" name="Graphical" type="xs:string" />
-							<xs:element minOccurs="0" name="Connections" />
-						</xs:sequence>
-						<xs:attribute name="id" type="ex:guid" use="required" />
-						<xs:attribute name="name" type="ex:TypeNonEmptyString" use="required" />
-						<xs:attribute name="maxInstances" type="xs:integer" />
-						<xs:attribute name="parent" type="ex:guid" />
-						<xs:attribute name="profile" type="ex:guid" />
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Interfaces" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Interface">
+                                            <xs:complexType>
+                                                <xs:attribute name="id" type="xs:integer" use="required" />
+                                                <xs:attribute name="name" type="ex:TypeNonEmptyString" use="required" />
+                                                <xs:attribute name="type" type="ex:InputType" use="required" />
+                                                <xs:attribute name="profile" type="ex:guid" />
+                                                <xs:attribute name="hidden" type="xs:string" />
+                                                <xs:attribute name="parameterGroupLink" type="xs:integer" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Graphical" type="xs:string" />
+                            <xs:element minOccurs="0" name="Connections" />
+                        </xs:sequence>
+                        <xs:attribute name="id" type="ex:guid" use="required" />
+                        <xs:attribute name="name" type="ex:TypeNonEmptyString" use="required" />
+                        <xs:attribute name="maxInstances" type="xs:integer" />
+                        <xs:attribute name="parent" type="ex:guid" />
+                        <xs:attribute name="profile" type="ex:guid" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
