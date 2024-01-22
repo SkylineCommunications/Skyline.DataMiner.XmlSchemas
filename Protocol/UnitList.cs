@@ -34,9 +34,9 @@
         /// <exception cref="FileNotFoundException">The file specified in <paramref name="uomFilePath"/> was not found.</exception>
         public UnitList(string uomFilePath)
         {
-            if(uomFilePath == null) throw new ArgumentNullException(nameof(uomFilePath));
+            if (uomFilePath == null) throw new ArgumentNullException(nameof(uomFilePath));
 
-            if(string.IsNullOrWhiteSpace(uomFilePath)) throw new ArgumentException("File path is empty or white space.", nameof(uomFilePath));
+            if (String.IsNullOrWhiteSpace(uomFilePath)) throw new ArgumentException("File path is empty or white space.", nameof(uomFilePath));
 
             if (!File.Exists(uomFilePath)) throw new FileNotFoundException($"The specified file '{uomFilePath}' was not found.");
 
@@ -51,7 +51,7 @@
         /// <exception cref="ArgumentNullException"></exception>
         public UnitList(XDocument schema)
         {
-            if(schema == null) throw new ArgumentNullException(nameof(schema));
+            if (schema == null) throw new ArgumentNullException(nameof(schema));
 
             LoadUomXsd(schema);
         }
