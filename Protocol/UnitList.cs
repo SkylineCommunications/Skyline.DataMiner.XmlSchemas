@@ -7,7 +7,7 @@
     using System.Xml.Linq;
 
     /// <summary>
-    /// Represents the UOM file.
+    /// Represents the Units of Measurement (UOM) file.
     /// </summary>
     /// <seealso cref="Skyline.DataMiner.XmlSchemas.Protocol.IUnitList" />
     public class UnitList : IUnitList
@@ -20,24 +20,47 @@
         /// </summary>
         internal UnitList()
         {
-            LoadUomXsd(GetUomFilePath());
+            var uomFilePath = GetUomFilePath();
+            XDocument schema = XDocument.Load(uomFilePath);
+            LoadUomXsd(schema);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnitList"/> class.
         /// </summary>
         /// <param name="uomFilePath">The UOM file path.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="uomFilePath"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="uomFilePath"/> is empty or white space.</exception>
+        /// <exception cref="FileNotFoundException">The file specified in <paramref name="uomFilePath"/> was not found.</exception>
         public UnitList(string uomFilePath)
         {
-            LoadUomXsd(uomFilePath);
+            if (uomFilePath == null) throw new ArgumentNullException(nameof(uomFilePath));
+
+            if (String.IsNullOrWhiteSpace(uomFilePath)) throw new ArgumentException("File path is empty or white space.", nameof(uomFilePath));
+
+            if (!File.Exists(uomFilePath)) throw new FileNotFoundException($"The specified file '{uomFilePath}' was not found.");
+
+            XDocument schema = XDocument.Load(uomFilePath);
+            LoadUomXsd(schema);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnitList"/> class.
+        /// </summary>
+        /// <param name="schema">The UOM schema.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public UnitList(XDocument schema)
+        {
+            if (schema == null) throw new ArgumentNullException(nameof(schema));
+
+            LoadUomXsd(schema);
         }
 
         /// <inheritdoc />
         public IReadOnlyCollection<IUnitEntry> Units => units.AsReadOnly();
 
-        private void LoadUomXsd(string path)
+        private void LoadUomXsd(XDocument schema)
         {
-            XDocument schema = XDocument.Load(path);
             XNamespace xs = schema.Root.Name.Namespace;
             XNamespace slu = "http://www.skyline.be/uomapp";
 
