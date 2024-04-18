@@ -353,6 +353,9 @@ DATE        VERSION   AUTHOR    COMMENTS
 09/01/2023      Added new tags for new Matrix. Added new type to EnumParamType. (DCP 201810) (RN 34661)
 26/05/2023      Removed /Protocol/Params/Param/ArrayOptions/ColumnOptions element (DCP210685) (RN36526).
 09/06/2023      Added /Protocol/ExportRules/ExportRule@whereAttribute (DCP 70149) (RN36622).
+22/02/2024      Added /Protocol/Groups/Group@threadIdAttribute (DCP 232581) (RN 38887).
+                Added /Protocol/Threads/Thread@nameAttribute (DCP 232581) (RN 38887).
+                Added /Protocol/Threads/Thread@idAttribute (DCP 232581) (RN 38887).
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -3733,6 +3736,14 @@ As a bus address is not always needed, the default value can also be set to "fal
                                     <xs:attribute name="ping" type="dis:EnumTrueFalse" use="optional">
                                         <xs:annotation>
                                             <xs:documentation><![CDATA[Specifies whether this is the group to be used when testing the connection in the element wizard.]]></xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="threadId" default="-1" type="xs:int" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <![CDATA[This attribute can be used to execute the group on a different thread than the main protocol thread.<br />
+                                                Default thread: -1 (main protocol thread)]]>
+                                            </xs:documentation>
                                         </xs:annotation>
                                     </xs:attribute>
                                 </xs:complexType>
@@ -7656,6 +7667,16 @@ As a bus address is not always needed, the default value can also be set to "fal
 												This can be either a real connection or a virtual connection. All groups linked to that connection will then be executed on that thread.<br />
 												In the connection attribute, you can specify a single connection ID or a comma-separated list of multiple connection IDs in case you want to combine a number of connections into one single thread).]]>
                                             </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="name" use="optional" type="dis:TypeNonEmptyString">
+                                        <xs:annotation>
+                                            <xs:documentation>Specifies a name for the thread.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="id" use="optional" type="dis:TypeObjectId">
+                                        <xs:annotation>
+                                            <xs:documentation>Specifies the unique thread ID which can then be used as target for a group to be executed on.</xs:documentation>
                                         </xs:annotation>
                                     </xs:attribute>
                                 </xs:complexType>
