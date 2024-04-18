@@ -13172,7 +13172,7 @@ As a bus address is not always needed, the default value can also be set to "fal
             <xs:documentation>Represents a vendor OID.</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="1\.3\.6\.1\.4\.1\.8813\.2\.\d+(.\d+)*" />
+            <xs:pattern value="1\.3\.6\.1\.4\.1\.8813\.2\.\d+(\.\d+)*" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="TypeTimerContentGroup">
