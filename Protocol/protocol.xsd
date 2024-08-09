@@ -353,7 +353,7 @@ DATE        VERSION   AUTHOR    COMMENTS
 09/01/2023      Added new tags for new Matrix. Added new type to EnumParamType. (DCP 201810) (RN 34661)
 26/05/2023      Removed /Protocol/Params/Param/ArrayOptions/ColumnOptions element (DCP210685) (RN36526).
 09/06/2023      Added /Protocol/ExportRules/ExportRule@whereAttribute (DCP 70149) (RN36622).
-22/02/2024      Added /Protocol/Groups/Group@threadIdAttribute (DCP 232581) (RN 38887).
+09/08/2024      Added /Protocol/Groups/Group@threadIdAttribute (DCP 232581) (RN 38887).
                 Added /Protocol/Threads/Thread@nameAttribute (DCP 232581) (RN 38887).
                 Added /Protocol/Threads/Thread@idAttribute (DCP 232581) (RN 38887).
 *********************************************************************************
@@ -3741,7 +3741,7 @@ As a bus address is not always needed, the default value can also be set to "fal
                                     <xs:attribute name="threadId" default="-1" type="xs:int" use="optional">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <![CDATA[This attribute can be used to execute the group on a different thread than the main protocol thread.<br />
+                                                <![CDATA[Specifies the ID of the thread that should execute the group.<br />
                                                 Default thread: -1 (main protocol thread)]]>
                                             </xs:documentation>
                                         </xs:annotation>
@@ -7674,9 +7674,9 @@ As a bus address is not always needed, the default value can also be set to "fal
                                             <xs:documentation>Specifies a name for the thread.</xs:documentation>
                                         </xs:annotation>
                                     </xs:attribute>
-                                    <xs:attribute name="id" use="optional" type="dis:TypeObjectId">
+                                    <xs:attribute name="id" use="optional" type="dis:TypeNonLeadingZeroUnsignedInt">
                                         <xs:annotation>
-                                            <xs:documentation>Specifies the unique thread ID which can then be used as target for a group to be executed on.</xs:documentation>
+                                            <xs:documentation>Specifies a unique ID that can be used as a target for group execution.</xs:documentation>
                                         </xs:annotation>
                                     </xs:attribute>
                                 </xs:complexType>
