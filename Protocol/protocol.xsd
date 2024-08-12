@@ -352,10 +352,10 @@ DATE        VERSION   AUTHOR    COMMENTS
 05/09/2022      Added new tag Protocol/Params/Param/CrossDriverOptions (DCP 192637) (RN 34333).
 09/01/2023      Added new tags for new Matrix. Added new type to EnumParamType. (DCP 201810) (RN 34661)
 26/05/2023      Removed /Protocol/Params/Param/ArrayOptions/ColumnOptions element (DCP210685) (RN36526).
-09/06/2023      Added /Protocol/ExportRules/ExportRule@whereAttribute (DCP 70149) (RN36622).
-09/08/2024      Added /Protocol/Groups/Group@threadIdAttribute (DCP 232581) (RN 38887).
-                Added /Protocol/Threads/Thread@nameAttribute (DCP 232581) (RN 38887).
-                Added /Protocol/Threads/Thread@idAttribute (DCP 232581) (RN 38887).
+09/06/2023      Added /Protocol/ExportRules/ExportRule@where attribute (DCP 70149) (RN36622).
+09/08/2024      Added /Protocol/Groups/Group@threadId attribute (DCP 232581) (RN 38887).
+                Added /Protocol/Threads/Thread@name attribute (DCP 232581) (RN 38887).
+                Added /Protocol/Threads/Thread@id attribute (DCP 232581) (RN 38887).
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -3742,7 +3742,7 @@ As a bus address is not always needed, the default value can also be set to "fal
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <![CDATA[Specifies the ID of the thread that should execute the group.<br />
-                                                Default thread: -1 (main protocol thread)]]>
+                                                Default: -1 (main protocol thread)]]>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:attribute>
@@ -7683,6 +7683,13 @@ As a bus address is not always needed, the default value can also be set to "fal
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
+                    <xs:unique name="threadId">
+                        <xs:annotation>
+                            <xs:documentation>A thread must have a unique ID.</xs:documentation>
+                        </xs:annotation>
+                        <xs:selector xpath="dis:Thread" />
+                        <xs:field xpath="@id" />
+                    </xs:unique>
                 </xs:element>
                 <xs:element name="Timers" minOccurs="0">
                     <xs:annotation>
