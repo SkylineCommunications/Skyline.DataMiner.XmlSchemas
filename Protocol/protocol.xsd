@@ -7660,7 +7660,7 @@ As a bus address is not always needed, the default value can also be set to "fal
                                     </xs:documentation>
                                 </xs:annotation>
                                 <xs:complexType>
-                                    <xs:attribute name="connection" type="dis:TypeSemicolonSeparatedNumbers" use="required">
+                                    <xs:attribute name="connection" type="dis:TypeCommaSeparatedNumbers" use="required">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <![CDATA[When you create an additional thread, you have to link it to a particular connection.<br />
