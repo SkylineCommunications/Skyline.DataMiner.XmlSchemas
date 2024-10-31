@@ -5585,7 +5585,7 @@ As a bus address is not always needed, the default value can also be set to "fal
                                                                 <xs:extension base="dis:EnumTrueFalse">
                                                                     <xs:attribute name="onAppLevel" type="EnumTrueFalse">
                                                                         <xs:annotation>
-                                                                            <xs:documentation><![CDATA[Set this attribute to "true" if the parameter has no position but needs RTDisplay true for application purposes. For validation only.]]></xs:documentation>
+                                                                            <xs:documentation><![CDATA[Obsolete -> Use ValidatorSuppression instead so that you can give more context. If set to "true", this indicates the parameter needs to be available on application level (e.g. Visual Overview, Automation script, GQI query, etc.). Note: this attribute is not known by DataMiner, it's only used by the validator.]]></xs:documentation>
                                                                         </xs:annotation>
                                                                     </xs:attribute>
                                                                 </xs:extension>
