@@ -356,7 +356,7 @@ DATE        VERSION   AUTHOR    COMMENTS
 09/08/2024      Added /Protocol/Groups/Group@threadId attribute (DCP 232581) (RN 38887).
                 Added /Protocol/Threads/Thread@name attribute (DCP 232581) (RN 38887).
                 Added /Protocol/Threads/Thread@id attribute (DCP 232581) (RN 38887).
-06/11/2024      Added /Protocol/PortSettings/SkipCertificateVerification and /Protocol/Ports/PortSettings/SkipCertificateVerification tag (DCP 195742, DCP 252619)) (RN 40877, RN 41285).
+06/11/2024      Added /Protocol/PortSettings/SkipCertificateVerification and /Protocol/Ports/PortSettings/SkipCertificateVerification tag (DCP 195742, DCP 252619) (RN 40877, RN 41285).
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
