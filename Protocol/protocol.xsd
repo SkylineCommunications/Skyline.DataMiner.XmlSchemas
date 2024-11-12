@@ -356,6 +356,7 @@ DATE        VERSION   AUTHOR    COMMENTS
 09/08/2024      Added /Protocol/Groups/Group@threadId attribute (DCP 232581) (RN 38887).
                 Added /Protocol/Threads/Thread@name attribute (DCP 232581) (RN 38887).
                 Added /Protocol/Threads/Thread@id attribute (DCP 232581) (RN 38887).
+06/11/2024      Added /Protocol/PortSettings/SkipCertificateVerification and /Protocol/Ports/PortSettings/SkipCertificateVerification tag (DCP 195742, DCP 252619) (RN 40877, RN 41285).
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -13990,6 +13991,26 @@ As a bus address is not always needed, the default value can also be set to "fal
                     </xs:all>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="SkipCertificateVerification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Specifies settings related to verification process of SSL/TLS certificates.<br />
+            Feature introduced in DataMiner 10.4.12 (RN 40877, RN 41285).</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="DefaultValue" minOccurs="0" type="EnumTrueFalse">
+                            <xs:annotation>
+                                <xs:documentation>Specifies whether the SSL/TLS certificate verification should be skipped by default.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Disabled" minOccurs="0" type="EnumTrueFalse">
+                            <xs:annotation>
+                                <xs:documentation>Specifies whether the DataMiner interface can be used to configure if the SSL/TLS certificate verification is skipped.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:all>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="SSH" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
@@ -14571,6 +14592,26 @@ As a bus address is not always needed, the default value can also be set to "fal
                         <xs:element name="Disabled" minOccurs="0" type="EnumTrueFalse">
                             <xs:annotation>
                                 <xs:documentation>Specifies whether the SetCommunity string can be modified in the DataMiner user interface.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:all>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SkipCertificateVerification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Specifies settings related to verification process of SSL/TLS certificates.<br />
+            Feature introduced in DataMiner 10.4.12 (RN 40877, RN 41285).</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="DefaultValue" minOccurs="0" type="EnumTrueFalse">
+                            <xs:annotation>
+                                <xs:documentation>Specifies whether the SSL/TLS certificate verification should be skipped by default.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Disabled" minOccurs="0" type="EnumTrueFalse">
+                            <xs:annotation>
+                                <xs:documentation>Specifies whether the DataMiner interface can be used to configure if the SSL/TLS certificate verification is skipped.</xs:documentation>
                             </xs:annotation>
                         </xs:element>
                     </xs:all>
