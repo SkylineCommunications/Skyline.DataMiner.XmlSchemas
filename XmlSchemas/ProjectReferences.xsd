@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:pr="http://www.skyline.be/projectReferences"
+    targetNamespace="http://www.skyline.be/projectReferences"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+    <xs:element name="ProjectReferences">
+        <xs:annotation>
+            <xs:documentation>Specifies the projects that need to be included or excluded for the package. </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+                <xs:element name="ProjectReference">
+                    <xs:complexType>
+                        <xs:attribute type="pr:TypeNonEmptyString" name="Include">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Specifies the relative path of the projects that need to be included. This path is relative to the project folder.
+                                    Wildcards (*) are supported.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute type="pr:TypeNonEmptyString" name="Exclude">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Specifies the relative path of the projects that need to be excluded. This path is relative to the project folder.
+                                    Wildcards (*) are supported.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                    <xs:key name="attributeKey">
+                        <!-- Needed to make sure that Include & Exclude are mutually exclusive -->
+                        <xs:selector xpath="." />
+                        <xs:field xpath="@Include|@Exclude" />
+                    </xs:key>
+                </xs:element>
+                <xs:element name="SolutionFilter">
+                    <xs:annotation>
+                        <xs:documentation>Specifies a Visual Studio solution filter (.slnf). This can act as a bulk Include of ProjectReferences.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:attribute type="pr:TypeNonEmptyString" name="Include">
+                            <xs:annotation>
+                                <xs:documentation>Specifies the relative path to the solution filter file (.slnf). This path is relative to the project folder.</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="TypeNonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
