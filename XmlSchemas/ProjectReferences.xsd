@@ -14,24 +14,22 @@
             <xs:choice maxOccurs="unbounded" minOccurs="0">
                 <xs:element name="ProjectReference">
                     <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:attribute type="pr:TypeNonEmptyString" name="Include">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Specifies the relative path of the projects that need to be included. This path is relative to the project folder.
-                                        Wildcards (*) are supported.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:attribute>
-                            <xs:attribute type="pr:TypeNonEmptyString" name="Exclude">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Specifies the relative path of the projects that need to be excluded. This path is relative to the project folder.
-                                        Wildcards (*) are supported.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:attribute>
-                        </xs:simpleContent>
+                        <xs:attribute type="pr:TypeNonEmptyString" name="Include">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Specifies the relative path of the projects that need to be included. This path is relative to the project folder.
+                                    Wildcards (*) are supported.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute type="pr:TypeNonEmptyString" name="Exclude">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Specifies the relative path of the projects that need to be excluded. This path is relative to the project folder.
+                                    Wildcards (*) are supported.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
                     </xs:complexType>
                     <xs:key name="attributeKey">
                         <!-- Needed to make sure that Include & Exclude are mutually exclusive -->
@@ -44,13 +42,11 @@
                         <xs:documentation>Specifies a Visual Studio solution filter (.slnf). This can act as a bulk Include of ProjectReferences.</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
-                        <xs:simpleContent>
-                                <xs:attribute type="pr:TypeNonEmptyString" name="Include">
-                                    <xs:annotation>
-                                        <xs:documentation>Specifies the relative path to the solution filter file (.slnf). This path is relative to the project folder.</xs:documentation>
-                                    </xs:annotation>
-                                </xs:attribute>
-                        </xs:simpleContent>
+                        <xs:attribute type="pr:TypeNonEmptyString" name="Include">
+                            <xs:annotation>
+                                <xs:documentation>Specifies the relative path to the solution filter file (.slnf). This path is relative to the project folder.</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
                     </xs:complexType>
                 </xs:element>
             </xs:choice>
