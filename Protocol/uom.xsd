@@ -437,6 +437,15 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Beacons">
+                <xs:annotation>
+                    <xs:documentation>beacons</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>beacons</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="Bft">
                 <xs:annotation>
                     <xs:documentation>Beaufort (wind speed)</xs:documentation>
