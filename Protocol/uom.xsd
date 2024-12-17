@@ -2123,6 +2123,42 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+			<xs:enumeration value="Discards">
+                <xs:annotation>
+                    <xs:documentation>Discards</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>Discards</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+			<xs:enumeration value="Discards/h">
+                <xs:annotation>
+                    <xs:documentation>Discards per hour</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>Discards per hour</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+			<xs:enumeration value="Discards/min">
+                <xs:annotation>
+                    <xs:documentation>Discards per minute</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>Discards per minute</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+			<xs:enumeration value="Discards/s">
+                <xs:annotation>
+                    <xs:documentation>Discards per second</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>Discards per second</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="dJ">
                 <xs:annotation>
                     <xs:documentation>decijoule</xs:documentation>
