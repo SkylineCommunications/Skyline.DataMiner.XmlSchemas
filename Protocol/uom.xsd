@@ -6695,11 +6695,11 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="Processes">
+            <xs:enumeration value="Process(es)">
                 <xs:annotation>
-                    <xs:documentation>processes</xs:documentation>
+                    <xs:documentation>process(es)</xs:documentation>
                     <xs:appinfo>
-                        <slu:name>processes</slu:name>
+                        <slu:name>process(es)</slu:name>
                         <slu:ignoreInDescription>false</slu:ignoreInDescription>
                     </xs:appinfo>
                 </xs:annotation>
