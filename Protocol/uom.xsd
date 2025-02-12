@@ -7652,6 +7652,15 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Transactions">
+                <xs:annotation>
+                    <xs:documentation>transactions</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>transactions</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="Ts">
                 <xs:annotation>
                     <xs:documentation>terasecond</xs:documentation>
