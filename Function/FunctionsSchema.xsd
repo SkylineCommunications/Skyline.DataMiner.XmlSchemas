@@ -57,6 +57,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="OverrideTimeoutVF" type="xs:string" minOccurs="0"/>
                 <xs:element maxOccurs="unbounded" name="Function">
                     <xs:complexType>
                         <xs:sequence>
