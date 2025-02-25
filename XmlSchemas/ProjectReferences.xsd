@@ -8,7 +8,7 @@
 
     <xs:element name="ProjectReferences">
         <xs:annotation>
-            <xs:documentation>Specifies the projects that need to be included or excluded for the package. </xs:documentation>
+            <xs:documentation>Specifies the projects that need to be included in or excluded from the package. </xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:choice maxOccurs="unbounded" minOccurs="0">
