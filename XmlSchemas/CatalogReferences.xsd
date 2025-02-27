@@ -38,9 +38,9 @@
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="cr:TypeNonEmptyString">
-                                                        <xs:attribute type="cr:EnumTrueFalse" name="allowPrerelease" use="optional">
+                                                        <xs:attribute type="cr:EnumTrueFalse" name="allowPrerelease" use="optional" default="false">
                                                             <xs:annotation>
-                                                                <xs:documentation>Specifies whether the latest version from the range can be a pre-release version.</xs:documentation>
+                                                                <xs:documentation>Specifies whether the latest version from the range can be a pre-release version. Default value is 'false'.</xs:documentation>
                                                             </xs:annotation>
                                                         </xs:attribute>
                                                     </xs:extension>
