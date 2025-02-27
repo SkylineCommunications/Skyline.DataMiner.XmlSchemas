@@ -20,18 +20,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\_NuGetItems\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\_NuGetItems\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <None Include="..\README.md" Pack="true" PackagePath="" />
+    <None Include="..\_NuGetItems\icon.png" Pack="true" PackagePath="" />
+    <None Include="..\_NuGetItems\LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="*.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="*.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackagePath>contentFiles\any\any\Skyline\XSD;content\Skyline\XSD</PackagePath>
+    </Content>
   </ItemGroup>
 
   <Target Name="IncludeXSD" BeforeTargets="_GetPackageFiles">
@@ -44,9 +47,9 @@
   </Target>
 
   <ItemGroup>
-    <ProjectReference Include="..\Automation\Automation.csproj"  />
-    <ProjectReference Include="..\Function\Function.csproj"  />
-    <ProjectReference Include="..\Protocol\Protocol.csproj"  />
+    <ProjectReference Include="..\Automation\Automation.csproj" />
+    <ProjectReference Include="..\Function\Function.csproj" />
+    <ProjectReference Include="..\Protocol\Protocol.csproj" />
   </ItemGroup>
 
 </Project>
