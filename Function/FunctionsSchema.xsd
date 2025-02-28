@@ -46,6 +46,20 @@
             <xs:enumeration value="inout" />
         </xs:restriction>
     </xs:simpleType >
+    <xs:simpleType name="EnumTrueFalseLowerCase">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="true">
+                <xs:annotation>
+                    <xs:documentation>True</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="false">
+                <xs:annotation>
+                    <xs:documentation>False</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:element name="Functions">
         <xs:complexType>
             <xs:sequence>
@@ -57,7 +71,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="OverrideTimeoutVF" type="xs:string" minOccurs="0"/>
+                <xs:element name="OverrideTimeoutVF" type="ex:EnumTrueFalseLowerCase" minOccurs="0"/>
                 <xs:element maxOccurs="unbounded" name="Function">
                     <xs:complexType>
                         <xs:sequence>
