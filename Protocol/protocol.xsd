@@ -12895,6 +12895,46 @@ As a bus address is not always needed, the default value can also be set to "fal
                             <xs:documentation>10.3.0.0 - 14100 - CU13</xs:documentation>
                         </xs:annotation>
                     </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 14241">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 14241 - CU14</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 14343">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 14343 - CU15</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 14518">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 14518 - CU16</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 14611">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 14611 - CU17</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 14735">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 14735 - CU18</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 14889">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 14889 - CU19</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 15002">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 15002 - CU20</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.3.0.0 - 15150">
+                        <xs:annotation>
+                            <xs:documentation>10.3.0.0 - 15150 - CU21</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
                     <xs:enumeration value="10.3.1.0 - 12509">
                         <xs:annotation>
                             <xs:documentation>10.3.1.0 - 12509</xs:documentation>
@@ -12960,14 +13000,69 @@ As a bus address is not always needed, the default value can also be set to "fal
                             <xs:documentation>10.3.12.0 - 13575 - CU1</xs:documentation>
                         </xs:annotation>
                     </xs:enumeration>
-                    <xs:enumeration value="10.4.0.0 - 14001">
-                        <xs:annotation>
-                            <xs:documentation>10.4.0.0 - 14001</xs:documentation>
-                        </xs:annotation>
-                    </xs:enumeration>
                     <xs:enumeration value="10.4.0.0 - 14003">
                         <xs:annotation>
                             <xs:documentation>10.4.0.0 - 14003</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 14109">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 14109 - CU1</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 14240">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 14240 - CU2</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 14347">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 14347 - CU3</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 14511">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 14511 - CU4</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 14637">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 14637 - CU5</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 14772">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 14772 - CU6</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 14883">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 14883 - CU7</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 15000">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 15000 - CU8</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 15151">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 15151 - CU9</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 15230">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 15230 - CU10</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 15340">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 15340 - CU11</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.0.0 - 15486">
+                        <xs:annotation>
+                            <xs:documentation>10.4.0.0 - 15486 - CU12</xs:documentation>
                         </xs:annotation>
                     </xs:enumeration>
                     <xs:enumeration value="10.4.1.0 - 13539">
@@ -12988,6 +13083,86 @@ As a bus address is not always needed, the default value can also be set to "fal
                     <xs:enumeration value="10.4.2.0 - 13915">
                         <xs:annotation>
                             <xs:documentation>10.4.2.0 - 13915</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.3.0 - 14001">
+                        <xs:annotation>
+                            <xs:documentation>10.4.3.0 - 14001</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.4.0 - 14113">
+                        <xs:annotation>
+                            <xs:documentation>10.4.4.0 - 14113</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.5.0 - 14239">
+                        <xs:annotation>
+                            <xs:documentation>10.4.5.0 - 14239</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.6.0 - 14348">
+                        <xs:annotation>
+                            <xs:documentation>10.4.6.0 - 14348</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.6.0 - 14421">
+                        <xs:annotation>
+                            <xs:documentation>10.4.6.0 - 14421 - CU1</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.7.0 - 14517">
+                        <xs:annotation>
+                            <xs:documentation>10.4.7.0 - 14517</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.8.0 - 14612">
+                        <xs:annotation>
+                            <xs:documentation>10.4.8.0 - 14612</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.9.0 - 14794">
+                        <xs:annotation>
+                            <xs:documentation>10.4.9.0 - 14794</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.10.0 - 14882">
+                        <xs:annotation>
+                            <xs:documentation>10.4.10.0 - 14882</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.11.0 - 15022">
+                        <xs:annotation>
+                            <xs:documentation>10.4.11.0 - 15022</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.4.12.0">
+                        <xs:annotation>
+                            <xs:documentation>10.4.12.0 - 15149</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.5.0.0">
+                        <xs:annotation>
+                            <xs:documentation>10.5.0.0 - 15485</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.5.1.0 - 15231">
+                        <xs:annotation>
+                            <xs:documentation>10.5.1.0 - 15231</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.5.2.0 - 15335">
+                        <xs:annotation>
+                            <xs:documentation>10.5.2.0 - 15335</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.5.2.0 - 15384">
+                        <xs:annotation>
+                            <xs:documentation>10.5.2.0 - 15384 - CU1</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="10.5.3.0 - 15484">
+                        <xs:annotation>
+                            <xs:documentation>10.5.3.0 - 15484</xs:documentation>
                         </xs:annotation>
                     </xs:enumeration>
                 </xs:restriction>
