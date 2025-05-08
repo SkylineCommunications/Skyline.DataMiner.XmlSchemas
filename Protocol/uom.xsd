@@ -8063,11 +8063,11 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
-             <xs:enumeration value="Update(s)">
+             <xs:enumeration value="Updates">
                 <xs:annotation>
-                    <xs:documentation>update(s)</xs:documentation>
+                    <xs:documentation>updates</xs:documentation>
                     <xs:appinfo>
-                        <slu:name>update(s)</slu:name>
+                        <slu:name>updates</slu:name>
                         <slu:ignoreInDescription>false</slu:ignoreInDescription>
                     </xs:appinfo>
                 </xs:annotation>
