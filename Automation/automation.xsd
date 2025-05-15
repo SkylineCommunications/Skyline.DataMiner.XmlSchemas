@@ -133,6 +133,45 @@
                         </xs:union>
                     </xs:simpleType>
                 </xs:element>
+                <xs:element name="Interactivity" minOccurs ="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Defines the interactivity options for an Automation script.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Auto">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Old behavior. In the background the script will be read to try to find out if interactivity is needed.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="Never">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The script will never be interactive. This means that the script will not show any UI elements.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="Optional">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The script will be interactive if it needs to be. This means that the script will show UI elements if needed.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="Always">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The script will always be interactive. This means that the script will always show UI elements.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
                 <xs:element name="Protocols" minOccurs ="1" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>Contains the dummy script variables defined in the script.</xs:documentation>
