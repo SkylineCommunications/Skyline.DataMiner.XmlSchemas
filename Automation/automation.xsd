@@ -133,7 +133,7 @@
                         </xs:union>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="Interactivity" minOccurs ="0" maxOccurs="1">
+                <xs:element name="Interactivity" minOccurs="0" maxOccurs="1">
                     <xs:annotation>
                         <xs:documentation>
                             Defines the interactivity options for an Automation script.
