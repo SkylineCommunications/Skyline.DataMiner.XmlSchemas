@@ -46,7 +46,7 @@
                     </xs:annotation>
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:pattern value="^[^/\\:;\*\?&gt;&lt;\|°&quot;]+$" />
+                            <xs:pattern value="^(?!\s)(?!.*[\/:*?&quot;&lt;&gt;|°;])[\S ]+(?&lt;!\s)$" />
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
