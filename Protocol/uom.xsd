@@ -3848,7 +3848,7 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="interrupts/s">
+            <xs:enumeration value="Interrupts/s">
                 <xs:annotation>
                     <xs:documentation>interrupts per second</xs:documentation>
                     <xs:appinfo>
