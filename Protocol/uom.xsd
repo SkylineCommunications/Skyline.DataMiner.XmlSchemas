@@ -7085,6 +7085,15 @@ DATE        VERSION     AUTHOR          COMMENTS
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Retries">
+                <xs:annotation>
+                    <xs:documentation>retries</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>retries</slu:name>
+                        <slu:ignoreInDescription>true</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="Rows">
                 <xs:annotation>
                     <xs:documentation>rows</xs:documentation>
