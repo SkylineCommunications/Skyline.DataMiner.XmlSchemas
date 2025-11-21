@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+***********************************************
+*  Copyright (c), Skyline Communications NV.  *
+***********************************************
+-->
 <xs:schema id="FunctionSchema"
     targetNamespace="http://www.skyline.be/config/functions"
 	xmlns:ex="http://www.skyline.be/config/functions"

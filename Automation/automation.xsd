@@ -1,4 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+***********************************************
+*  Copyright (c), Skyline Communications NV.  *
+***********************************************
+-->
 <xs:schema id="AutomationScript"
     targetNamespace="http://www.skyline.be/automation"
     elementFormDefault="qualified"
