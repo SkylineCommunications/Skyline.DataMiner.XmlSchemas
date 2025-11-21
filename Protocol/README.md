@@ -72,7 +72,7 @@ DD/MM/YYYY  X.Y.Z       Your Name       Added new unit "YourUnitSymbol" (descrip
 ```xml
 <xs:enumeration value="m/s²">
     <xs:annotation>
-        <xs:documentation>meter per second squared (acceleration)</xs:documentation>
+        <xs:documentation>meter per square second (acceleration)</xs:documentation>
         <xs:appinfo>
             <slu:name>meter per second squared (acceleration)</slu:name>
             <slu:ignoreInDescription>false</slu:ignoreInDescription>
