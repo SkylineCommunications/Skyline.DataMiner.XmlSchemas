@@ -58,15 +58,6 @@ For units that have old notations, you can add legacy notations:
 </xs:enumeration>
 ```
 
-#### Step 5: Update the Revision History
-
-Add an entry to the revision history comment block at the top of `uom.xsd`:
-
-```xml
-DATE        VERSION     AUTHOR          COMMENTS
-DD/MM/YYYY  X.Y.Z       Your Name       Added new unit "YourUnitSymbol" (description)
-```
-
 #### Example: Adding Meters Per Second Squared (m/s²)
 
 ```xml
