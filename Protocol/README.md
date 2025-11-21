@@ -58,7 +58,7 @@ For units that have old notations, you can add legacy notations:
 </xs:enumeration>
 ```
 
-#### Example: Adding Meters Per Second Squared (m/s²)
+#### Example: Adding Meters Per Square Second (m/s²)
 
 ```xml
 <xs:enumeration value="m/s²">
