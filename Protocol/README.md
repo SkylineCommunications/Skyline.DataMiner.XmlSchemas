@@ -63,9 +63,9 @@ For units that have old notations, you can add legacy notations:
 ```xml
 <xs:enumeration value="m/s²">
     <xs:annotation>
-        <xs:documentation>meter per second squared (acceleration)</xs:documentation>
+        <xs:documentation>meter per square second (acceleration)</xs:documentation>
         <xs:appinfo>
-            <slu:name>meter per second squared (acceleration)</slu:name>
+            <slu:name>meter per square second (acceleration)</slu:name>
             <slu:ignoreInDescription>false</slu:ignoreInDescription>
         </xs:appinfo>
     </xs:annotation>
