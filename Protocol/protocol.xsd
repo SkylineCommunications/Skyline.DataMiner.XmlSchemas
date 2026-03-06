@@ -4731,37 +4731,37 @@ As a bus address is not always needed, the default value can also be set to "fal
                                                 <xs:all>
                                                     <xs:element name="CH" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "critical high" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new critical high alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="CL" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "critical low" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new critical low alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="Info" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>When the value of the alarm is equal to the value specified in this element, an information event is generated.</xs:documentation>
+                                                            <xs:documentation>When the alarm value equals the specified value, an information event is generated. If this tag contains a value, information event generation will be enabled by default for newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="MaH" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "major high" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new major high alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="MaL" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "major low" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new major low alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="MiH" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "minor high" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new minor high alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="MiL" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "minor low" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new minor low alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="Monitored" minOccurs="0">
@@ -4790,12 +4790,12 @@ As a bus address is not always needed, the default value can also be set to "fal
                                                     </xs:element>
                                                     <xs:element name="WaH" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "warning high" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new warning high alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                     <xs:element name="WaL" minOccurs="0" type="dis:TypeAlarmTemplateDefaultValues">
                                                         <xs:annotation>
-                                                            <xs:documentation>Defines the default value in the alarm template that this parameter must equal or exceed in order for DataMiner to create a new "warning low" alarm.</xs:documentation>
+                                                            <xs:documentation>Defines the default threshold value in the alarm template. When the parameter equals or exceeds this value, a new warning low alarm is generated. Filling in this tag does not enable alarming for this parameter by default in newly created alarm templates.</xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
                                                 </xs:all>
