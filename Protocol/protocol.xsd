@@ -8460,10 +8460,12 @@ As a bus address is not always needed, the default value can also be set to "fal
                                                                                                                                             <xs:complexType>
                                                                                                                                                 <xs:simpleContent>
                                                                                                                                                     <xs:extension base="xs:string">
-                                                                                                                                                        <xs:attribute name="introducedBy" type="dis:TypeProtocolVersionOrPriorToGit" use="required">
+                                                                                                                                                        <xs:attribute name="introducedBy" type="dis:TypeProtocolVersion" use="required">
                                                                                                                                                             <xs:annotation>
                                                                                                                                                                 <xs:documentation>
-                                                                                                                                                                    <![CDATA[Specifies the version in which the bug being fixed was originally introduced, or "priorToGit" if it predates version control.]]>
+                                                                                                                                                                    <![CDATA[Specifies the version in which the bug being fixed was originally introduced.
+                                                                                                                                                                    This can be determined using Git blame.
+                                                                                                                                                                    If the bug predates Git, estimate the version based on the available version information (aka. Revision History), or use the last version released prior to the migration to Git.]]>
                                                                                                                                                                 </xs:documentation>
                                                                                                                                                             </xs:annotation>
                                                                                                                                                         </xs:attribute>
@@ -13587,15 +13589,6 @@ As a bus address is not always needed, the default value can also be set to "fal
             <xs:pattern value="[1-9][0-9]*\.[0-9]+\.[0-9]+\.[1-9][0-9]*">
             </xs:pattern>
         </xs:restriction>
-    </xs:simpleType>
-    <xs:simpleType name="TypeProtocolVersionOrPriorToGit">
-        <xs:union memberTypes="dis:TypeProtocolVersion">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="priorToGit"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union>
     </xs:simpleType>
     <!-- Custom Datatypes: complexTypes  -->
     <xs:complexType name="TypeColumnOption">
