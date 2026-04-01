@@ -5695,6 +5695,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+             <xs:enumeration value="MWh">
+                <xs:annotation>
+                    <xs:documentation>megawatt hour</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>megawatt hour</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="N">
                 <xs:annotation>
                     <xs:documentation>newton</xs:documentation>
