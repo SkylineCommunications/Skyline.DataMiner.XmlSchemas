@@ -8453,10 +8453,23 @@ As a bus address is not always needed, the default value can also be set to "fal
                                                                                                                                 </xs:annotation>
                                                                                                                                 <xs:complexType>
                                                                                                                                     <xs:choice minOccurs="1" maxOccurs="unbounded">
-                                                                                                                                        <xs:element name="Fix" type="xs:string">
+                                                                                                                                        <xs:element name="Fix">
                                                                                                                                             <xs:annotation>
                                                                                                                                                 <xs:documentation><![CDATA[Describes a fix.]]></xs:documentation>
                                                                                                                                             </xs:annotation>
+                                                                                                                                            <xs:complexType>
+                                                                                                                                                <xs:simpleContent>
+                                                                                                                                                    <xs:extension base="xs:string">
+                                                                                                                                                        <xs:attribute name="introducedBy" type="dis:TypeProtocolVersionOrPriorToGit" use="required">
+                                                                                                                                                            <xs:annotation>
+                                                                                                                                                                <xs:documentation>
+                                                                                                                                                                    <![CDATA[Specifies the version in which the bug being fixed was originally introduced, or "priorToGit" if it predates version control.]]>
+                                                                                                                                                                </xs:documentation>
+                                                                                                                                                            </xs:annotation>
+                                                                                                                                                        </xs:attribute>
+                                                                                                                                                    </xs:extension>
+                                                                                                                                                </xs:simpleContent>
+                                                                                                                                            </xs:complexType>
                                                                                                                                         </xs:element>
                                                                                                                                         <xs:element name="Change" type="xs:string">
                                                                                                                                             <xs:annotation>
@@ -10667,7 +10680,7 @@ As a bus address is not always needed, the default value can also be set to "fal
     </xs:simpleType>
     <xs:simpleType name="EnumParamMeasurementType">
         <xs:annotation>
-            <xs:documentation>Specifies the parameter measurment type.</xs:documentation>
+            <xs:documentation>Specifies the parameter measurement type.</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:enumeration value="analog" />
@@ -13574,6 +13587,15 @@ As a bus address is not always needed, the default value can also be set to "fal
             <xs:pattern value="[1-9][0-9]*\.[0-9]+\.[0-9]+\.[1-9][0-9]*">
             </xs:pattern>
         </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeProtocolVersionOrPriorToGit">
+        <xs:union memberTypes="dis:TypeProtocolVersion">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="priorToGit"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
     </xs:simpleType>
     <!-- Custom Datatypes: complexTypes  -->
     <xs:complexType name="TypeColumnOption">
