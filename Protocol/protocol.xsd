@@ -347,6 +347,7 @@ DATE        VERSION   AUTHOR    COMMENTS
                 Added /Protocol/Threads/Thread@name attribute (DCP 232581) (RN 38887).
                 Added /Protocol/Threads/Thread@id attribute (DCP 232581) (RN 38887).
 06/11/2024      Added /Protocol/PortSettings/SkipCertificateVerification and /Protocol/Ports/PortSettings/SkipCertificateVerification tag (DCP 195742, DCP 252619) (RN 40877, RN 41285).
+08/04/2026      Added /Protocol/Swarming/BypassChecks/Check (DCP 291767) (RN 45173).
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -7636,6 +7637,29 @@ As a bus address is not always needed, the default value can also be set to "fal
                         </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="Swarming" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Functionality to override the default swarming behavior. Feature introduced in DataMiner 10.6.6 (RN 45173).</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="BypassChecks" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>Contains all disabled checks that will no longer prevent an element from being able to swarm.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Check" minOccurs="1" maxOccurs="unbounded" type="EnumSwarmingBypassCheck">
+                                            <xs:annotation>
+                                                <xs:documentation>Check that is disabled and will no longer prevent an element from being able to swarm.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Threads" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>Specifies additional threads that will be used by the protocol. This allows you to separate time-critical actions from device-polling actions. Use with caution.</xs:documentation>
@@ -12431,6 +12455,18 @@ As a bus address is not always needed, the default value can also be set to "fal
             <xs:enumeration value="MajorChange">
                 <xs:annotation>
                     <xs:documentation>Major Change Suppression</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumSwarmingBypassCheck">
+        <xs:annotation>
+            <xs:documentation>Check that is disabled and will no longer prevent an element from being able to swarm.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="smartSerialAsServer">
+                <xs:annotation>
+                    <xs:documentation>A smart-serial connection in server mode is by default not allowed to be swarmed. This check can be ignored when the element is able to configure where the data source should send its data to.</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
