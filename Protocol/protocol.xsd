@@ -348,6 +348,22 @@ DATE        VERSION   AUTHOR    COMMENTS
                 Added /Protocol/Threads/Thread@id attribute (DCP 232581) (RN 38887).
 06/11/2024      Added /Protocol/PortSettings/SkipCertificateVerification and /Protocol/Ports/PortSettings/SkipCertificateVerification tag (DCP 195742, DCP 252619) (RN 40877, RN 41285).
 08/04/2026      Added /Protocol/Swarming/BypassChecks/Check (DCP 291767) (RN 45173).
+07/07/2026      Added /Protocol/Settings tag (DCP 300443) (RN 45928)
+                Added /Protocol/Settings/Setting tag (DCP 300443) (RN 45928)
+                Added /Protocol/Settings/Setting@id attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Settings/Setting@displayName attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Settings/Setting/Text tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge tag (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts tag (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script tag (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script@id attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script@displayName attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script@guid attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script/Arguments tag (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script/Arguments/Argument tag (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script/Arguments/Argument@name attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script/Arguments/Argument/SettingRef tag (DCP 300443) (RN 45928)
+                Added /Protocol/Scripts/Script/Arguments/Argument/SettingRef@id attribute (DCP 300443) (RN 45928)
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -8728,6 +8744,224 @@ As a bus address is not always needed, the default value can also be set to "fal
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="Settings" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[Contains all settings defined in the protocol. These settings provide configuration options for elements running this protocol.
+                             Feature introduced in DataMiner 10.6.10 (RN 45928)]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Setting" minOccurs="1" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <![CDATA[Contains a protocol setting.]]>
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:choice>
+                                        <xs:element name="Text">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    <![CDATA[Specifies that the setting is a text input setting.]]>
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType/>
+                                        </xs:element>
+                                    </xs:choice>
+                                    <xs:attribute name="id" type="dis:TypeNonEmptyString" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <![CDATA[Specifies the unique ID of the setting.]]>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="displayName" type="dis:TypeNonEmptyString" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <![CDATA[Specifies the name for this setting that will be shown to the user.]]>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:unique name="UniqueSettingId">
+                        <xs:annotation>
+                            <xs:documentation>The setting IDs must be unique.</xs:documentation>
+                        </xs:annotation>
+                        <xs:selector xpath="dis:Setting" />
+                        <xs:field xpath="@id" />
+                    </xs:unique>
+                </xs:element>
+                <xs:element name="Edge" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[Specifies everything regarding Edge functionality for DataMiner.
+                                    Feature introduced in DataMiner 10.6.10 (RN 45928).]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Scripts" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <![CDATA[Specifies the scripts related to Edge functionality.]]>
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Script" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    <![CDATA[Specifies a script related to Edge functionality.]]>
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="Arguments" minOccurs="0" maxOccurs="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                <![CDATA[Describes the input arguments that the scripts will receive when started.]]>
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Argument" minOccurs="1" maxOccurs="unbounded">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            <![CDATA[Specifies an input argument that will be passed to the script when it is started.]]>
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:choice>
+                                                                            <xs:element name="SettingRef">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>
+                                                                                        <![CDATA[Specifies the setting whose value has to be used as the value of this argument.]]>
+                                                                                    </xs:documentation>
+                                                                                </xs:annotation>
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="id" type="dis:TypeNonEmptyString" use="required">
+                                                                                        <xs:annotation>
+                                                                                            <xs:documentation>
+                                                                                                <![CDATA[Specifies the ID of the setting (as specified in /Protocol/Settings/Setting@id) whose value has to be used.]]>
+                                                                                            </xs:documentation>
+                                                                                        </xs:annotation>
+                                                                                    </xs:attribute>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:choice>
+                                                                        <xs:attribute name="name" type="dis:TypeNonEmptyString" use="required">
+                                                                            <xs:annotation>
+                                                                                <xs:documentation>
+                                                                                    <![CDATA[Specifies the name under which the argument value is made available to the script. The script can use this name to retrieve the value.]]>
+                                                                                </xs:documentation>
+                                                                            </xs:annotation>
+                                                                        </xs:attribute>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                        <xs:unique name="UniqueArgumentName">
+                                                            <xs:annotation>
+                                                                <xs:documentation>The name of an argument must be unique.</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:selector xpath="dis:Argument" />
+                                                            <xs:field xpath="@name" />
+                                                        </xs:unique>
+                                                    </xs:element>
+                                                    <xs:element name="Schedule">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                <![CDATA[Specifies when and how often the script has to be executed.]]>
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Default">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            <![CDATA[Specifies the default schedule that will be used to execute the script.]]>
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:choice>
+                                                                            <xs:element name="Interval">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>
+                                                                                        <![CDATA[Specifies that the script has to be executed repeatedly, started at a fixed interval.]]>
+                                                                                    </xs:documentation>
+                                                                                </xs:annotation>
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="period" use="required" type="dis:TypePositiveDuration">
+                                                                                        <xs:annotation>
+                                                                                            <xs:documentation>
+                                                                                                <![CDATA[Specifies the interval at which the script has to be executed, expressed as an ISO 8601 duration (e.g. "PT5M" for every 5 minutes).]]>
+                                                                                            </xs:documentation>
+                                                                                        </xs:annotation>
+                                                                                    </xs:attribute>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:choice>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                                <xs:attribute name="id" type="xs:string" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[Specifies the unique ID for this script.]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="displayName" type="xs:string" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[Specifies name of the script that will be shown to the user.]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="guid" type="dis:TypeGuid" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <![CDATA[Specifies the GUID specified in the manifest.json of the dmscript. This links the script tag with the correct dmscript.]]>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                                <xs:unique name="UniqueScriptId">
+                                    <xs:annotation>
+                                        <xs:documentation>The ID of a script must be unique.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:selector xpath="dis:Script" />
+                                    <xs:field xpath="@id" />
+                                </xs:unique>
+                                <xs:unique name="UniqueScriptDisplayName">
+                                    <xs:annotation>
+                                        <xs:documentation>The display name of a script must be unique.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:selector xpath="dis:Script" />
+                                    <xs:field xpath="@displayName" />
+                                </xs:unique>
+                                <xs:unique name="UniqueScriptGuid">
+                                    <xs:annotation>
+                                        <xs:documentation>The GUID of a script must be unique.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:selector xpath="dis:Script" />
+                                    <xs:field xpath="@guid" />
+                                </xs:unique>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:all>
             <xs:attribute name="baseFor" type="xs:string">
                 <xs:annotation>
@@ -8764,6 +8998,13 @@ As a bus address is not always needed, the default value can also be set to "fal
                 <xs:documentation>A session must have a unique ID.</xs:documentation>
             </xs:annotation>
             <xs:selector xpath="dis:HTTP/dis:Session" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        <xs:key name="settingId">
+            <xs:annotation>
+                <xs:documentation>A setting must have a unique ID.</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="dis:Settings/dis:Setting" />
             <xs:field xpath="@id" />
         </xs:key>
         <xs:key name="triggerId">
@@ -8870,6 +9111,13 @@ As a bus address is not always needed, the default value can also be set to "fal
             </xs:annotation>
             <xs:selector xpath="dis:Ports/dis:PortSettings/dis:SSH/dis:Identity" />
             <xs:field xpath="@pid" />
+        </xs:keyref>
+        <xs:keyref name="settingRefIdRef" refer="dis:settingId">
+            <xs:annotation>
+                <xs:documentation>The specified setting in an Edge script argument must exist.</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="dis:Edge/dis:Scripts/dis:Script/dis:Arguments/dis:Argument/dis:SettingRef" />
+            <xs:field xpath="@id" />
         </xs:keyref>
     </xs:element>
     <!-- Custom Datatypes: enums -->
@@ -16216,6 +16464,24 @@ As a bus address is not always needed, the default value can also be set to "fal
                     <xs:documentation>Indicates the maximum of connected outputs for an input. Note: auto for no maximum.</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeGuid">
+        <xs:annotation>
+            <xs:documentation>
+                The representation of a GUID, generally the id of an element.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypePositiveDuration">
+        <xs:restriction base="xs:duration">
+            <xs:annotation>
+                <xs:documentation>The period must be larger than or equal to 1s.</xs:documentation>
+            </xs:annotation>
+            <xs:minInclusive value="PT1S" />
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
