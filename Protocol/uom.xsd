@@ -6763,6 +6763,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+			<xs:enumeration value="px/deg">
+				<xs:annotation>
+					<xs:documentation>pixels per degree</xs:documentation>
+					<xs:appinfo>
+						<slu:name>pixels per degree</slu:name>
+						<slu:ignoreInDescription>false</slu:ignoreInDescription>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
             <xs:enumeration value="R">
                 <xs:annotation>
                     <xs:documentation>roentgen</xs:documentation>
