@@ -2278,6 +2278,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="E-7">
+                <xs:annotation>
+                    <xs:documentation>E-7 (Bit Error Rate)</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>E-7 (Bit Error Rate)</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="EA">
                 <xs:annotation>
                     <xs:documentation>exa-ampere</xs:documentation>
@@ -2604,6 +2613,15 @@
                     <xs:documentation>exasecond</xs:documentation>
                     <xs:appinfo>
                         <slu:name>exasecond</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Euro">
+                <xs:annotation>
+                    <xs:documentation>euro</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>euro</slu:name>
                         <slu:ignoreInDescription>false</slu:ignoreInDescription>
                     </xs:appinfo>
                 </xs:annotation>
