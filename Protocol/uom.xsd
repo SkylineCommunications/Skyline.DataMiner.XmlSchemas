@@ -862,6 +862,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Collisions">
+                <xs:annotation>
+                    <xs:documentation>collisions</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>collisions</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="Columns">
                 <xs:annotation>
                     <xs:documentation>columns</xs:documentation>
@@ -2644,6 +2653,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Events">
+                <xs:annotation>
+                    <xs:documentation>events</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>events</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="EW">
                 <xs:annotation>
                     <xs:documentation>exawatt</xs:documentation>
@@ -3795,6 +3813,15 @@
                     <xs:documentation>inches of mercury (pressure)</xs:documentation>
                     <xs:appinfo>
                         <slu:name>inches of mercury (pressure)</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Interfaces">
+                <xs:annotation>
+                    <xs:documentation>interfaces</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>interfaces</slu:name>
                         <slu:ignoreInDescription>false</slu:ignoreInDescription>
                     </xs:appinfo>
                 </xs:annotation>
@@ -6610,6 +6637,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Ports">
+                <xs:annotation>
+                    <xs:documentation>ports</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>ports</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="pPa">
                 <xs:annotation>
                     <xs:documentation>picopascal</xs:documentation>
@@ -7653,6 +7689,15 @@
                     <xs:documentation>transactions per second</xs:documentation>
                     <xs:appinfo>
                         <slu:name>transactions per second</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Traps">
+                <xs:annotation>
+                    <xs:documentation>traps</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>traps</slu:name>
                         <slu:ignoreInDescription>false</slu:ignoreInDescription>
                     </xs:appinfo>
                 </xs:annotation>
