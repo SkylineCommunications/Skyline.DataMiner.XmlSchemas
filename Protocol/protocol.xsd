@@ -364,7 +364,7 @@ DATE        VERSION   AUTHOR    COMMENTS
                 Added /Protocol/Edge/Scripts/Script/Arguments/Argument@name attribute (DCP 300443) (RN 45928)
                 Added /Protocol/Edge/Scripts/Script/Arguments/Argument/SettingRef tag (DCP 300443) (RN 45928)
                 Added /Protocol/Edge/Scripts/Script/Arguments/Argument/SettingRef@id attribute (DCP 300443) (RN 45928)
-18/08/2026      Added /Protocol/Edge/AllowDynamicParameterCreation tag (DCP 299720) (RN 46233)
+18/08/2026      Added /Protocol/AllowDynamicParameterCreation tag (DCP 299720) (RN 46233)
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -8805,15 +8805,7 @@ As a bus address is not always needed, the default value can also be set to "fal
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="AllowDynamicParameterCreation" minOccurs="0" maxOccurs="1" type="EnumTrueFalse">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        <![CDATA[Specifies whether the connector can be extended with dynamically created (auto-generated) parameters.<br />
-                                                Default value: false.]]>
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
+                        <xs:sequence>                            
                             <xs:element name="Scripts" minOccurs="0" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -8970,6 +8962,14 @@ As a bus address is not always needed, the default value can also be set to "fal
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
+                </xs:element>
+                <xs:element name="AllowDynamicParameterCreation" minOccurs="0" maxOccurs="1" type="EnumTrueFalse">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[Specifies whether the connector can be extended with dynamically created (auto-generated) parameters.<br />
+                            Default value: false.]]>
+                        </xs:documentation>
+                    </xs:annotation>
                 </xs:element>
             </xs:all>
             <xs:attribute name="baseFor" type="xs:string">
