@@ -362,7 +362,7 @@
                                             </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
-                                                    <xs:enumeration value="UserNamePassword">
+                                                    <xs:enumeration value="UserNameAndPassword">
                                                         <xs:annotation>
                                                             <xs:documentation>
                                                                 A set of credentials holding a user name and a password.
