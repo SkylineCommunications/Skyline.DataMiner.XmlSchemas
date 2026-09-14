@@ -289,6 +289,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Attempts">
+                <xs:annotation>
+                    <xs:documentation>attempts</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>attempts</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="Attempts/h">
                 <xs:annotation>
                     <xs:documentation>attempts per hour</xs:documentation>
