@@ -340,12 +340,12 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Credential" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="Credential" minOccurs="1" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>Defines a set of credentials from the Credentials Library that the script is linked to.</xs:documentation>
                                 </xs:annotation>
                                 <xs:complexType>
-                                    <xs:sequence>
+                                    <xs:all>
                                         <xs:element name="Name" type="NonEmptyStringType">
                                             <xs:annotation>
                                                 <xs:documentation>Specifies the name of the credentials.</xs:documentation>
@@ -379,7 +379,7 @@
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                    </xs:sequence>
+                                    </xs:all>
                                     <xs:attribute name="id" use="required" type="xs:positiveInteger">
                                         <xs:annotation>
                                             <xs:documentation>Specifies the unique ID of the credentials.</xs:documentation>
