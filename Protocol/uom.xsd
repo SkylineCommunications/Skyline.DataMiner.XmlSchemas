@@ -6205,6 +6205,15 @@
                     </xs:appinfo>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="Operations">
+                <xs:annotation>
+                    <xs:documentation>operations</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>operations</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="ops">
                 <xs:annotation>
                     <xs:documentation>operations per second</xs:documentation>
@@ -6732,6 +6741,15 @@
                     <xs:documentation>pounds per square inch (Non-SI Pascal (Pa) is preferred)</xs:documentation>
                     <xs:appinfo>
                         <slu:name>pounds per square inch (Non-SI Pascal (Pa) is preferred)</slu:name>
+                        <slu:ignoreInDescription>false</slu:ignoreInDescription>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Pulses">
+                <xs:annotation>
+                    <xs:documentation>pulses</xs:documentation>
+                    <xs:appinfo>
+                        <slu:name>pulses</slu:name>
                         <slu:ignoreInDescription>false</slu:ignoreInDescription>
                     </xs:appinfo>
                 </xs:annotation>
