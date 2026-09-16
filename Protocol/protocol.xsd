@@ -8779,7 +8779,7 @@ As a bus address is not always needed, the default value can also be set to "fal
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="Section" type="dis:ProtocolSettingSection">
+                            <xs:element name="Section" type="dis:ProtocolSettingsSection">
                                 <xs:annotation>
                                     <xs:documentation>
                                         <![CDATA[Groups related protocol settings under a section heading.]]>
@@ -8790,9 +8790,7 @@ As a bus address is not always needed, the default value can also be set to "fal
                     </xs:complexType>
                     <xs:unique name="UniqueSettingId">
                         <xs:annotation>
-                            <xs:documentation>
-                                <![CDATA[The setting IDs must be unique.]]>
-                            </xs:documentation>
+                            <xs:documentation>The setting IDs must be unique.</xs:documentation>
                         </xs:annotation>
                         <xs:selector xpath="dis:Setting" />
                         <xs:field xpath="@id" />
@@ -9322,13 +9320,12 @@ As a bus address is not always needed, the default value can also be set to "fal
     </xs:simpleType>
     <xs:complexType name="ProtocolSetting">
         <xs:choice>
-            <xs:element name="Text">
+            <xs:element name="Text" type="dis:EmptyType" >
                 <xs:annotation>
                     <xs:documentation>
                         <![CDATA[Specifies a free-form text setting.]]>
                     </xs:documentation>
                 </xs:annotation>
-                <xs:complexType />
             </xs:element>
             <xs:element name="DropDown">
                 <xs:annotation>
@@ -9370,6 +9367,20 @@ As a bus address is not always needed, the default value can also be set to "fal
                                         </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
+                                <xs:unique name="UniqueDropDownOptionValue">
+                                    <xs:annotation>
+                                        <xs:documentation>No duplicate values must occur among the dropdown options.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:selector xpath="dis:Option" />
+                                    <xs:field xpath="@value" />
+                                </xs:unique>
+                                <xs:unique name="UniqueDropDownOptionDisplayName">
+                                    <xs:annotation>
+                                        <xs:documentation>No duplicate display names must occur among the dropdown options.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:selector xpath="dis:Option" />
+                                    <xs:field xpath="@displayName" />
+                                </xs:unique>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
@@ -9415,7 +9426,6 @@ As a bus address is not always needed, the default value can also be set to "fal
                     <xs:documentation>
                         <![CDATA[Specifies an IP port setting.]]>
                     </xs:documentation>
-
                 </xs:annotation>
             </xs:element>
             <xs:element name="Number">
@@ -9477,7 +9487,7 @@ As a bus address is not always needed, the default value can also be set to "fal
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
-    <xs:complexType name="ProtocolSettingSection">
+    <xs:complexType name="ProtocolSettingsSection">
         <xs:sequence>
             <xs:element name="Setting" type="dis:ProtocolSetting" minOccurs="1" maxOccurs="unbounded">
                 <xs:annotation>
