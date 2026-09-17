@@ -8805,8 +8805,8 @@ As a bus address is not always needed, the default value can also be set to "fal
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
-                        <xs:sequence>                            
-                            <xs:element name="Scripts" minOccurs="0" maxOccurs="1">
+                        <xs:sequence>
+                            <xs:element name="Scripts" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         <![CDATA[Specifies the scripts related to Edge functionality.]]>
@@ -13678,6 +13678,13 @@ As a bus address is not always needed, the default value can also be set to "fal
                     <xs:maxInclusive value="9999999" />
                 </xs:restriction>
             </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:unsignedInt">
+                    <xs:pattern value="[123456789]\d*" />
+                    <xs:minInclusive value="10000000" />
+                    <xs:maxInclusive value="10999999" />
+                </xs:restriction>
+            </xs:simpleType>
         </xs:union>
     </xs:simpleType>
     <xs:simpleType name="TypeObjectId">
@@ -13704,6 +13711,13 @@ As a bus address is not always needed, the default value can also be set to "fal
                     <xs:pattern value="[123456789]\d*" />
                     <xs:minInclusive value="1000000" />
                     <xs:maxInclusive value="9999999" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:unsignedInt">
+                    <xs:pattern value="[123456789]\d*" />
+                    <xs:minInclusive value="10000000" />
+                    <xs:maxInclusive value="10999999" />
                 </xs:restriction>
             </xs:simpleType>
         </xs:union>
