@@ -354,16 +354,17 @@ DATE        VERSION   AUTHOR    COMMENTS
                 Added /Protocol/Settings/Setting@displayName attribute (DCP 300443) (RN 45928)
                 Added /Protocol/Settings/Setting/Text tag (DCP 300443) (RN 45928)
                 Added /Protocol/Edge tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script@id attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script@displayName attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script@guid attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument@name attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument/SettingRef tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument/SettingRef@id attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script@id attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script@displayName attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script@guid attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument@name attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument/SettingRef tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument/SettingRef@id attribute (DCP 300443) (RN 45928)
+18/08/2026      Added /Protocol/AllowDynamicParameterCreation tag (DCP 299720) (RN 46233)
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -8962,6 +8963,14 @@ As a bus address is not always needed, the default value can also be set to "fal
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="AllowDynamicParameterCreation" minOccurs="0" maxOccurs="1" type="EnumTrueFalse">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[Specifies whether the connector can be extended with dynamically created (auto-generated) parameters.<br />
+                            Default value: false.]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
             </xs:all>
             <xs:attribute name="baseFor" type="xs:string">
                 <xs:annotation>
@@ -13669,6 +13678,13 @@ As a bus address is not always needed, the default value can also be set to "fal
                     <xs:maxInclusive value="9999999" />
                 </xs:restriction>
             </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:unsignedInt">
+                    <xs:pattern value="[123456789]\d*" />
+                    <xs:minInclusive value="10000000" />
+                    <xs:maxInclusive value="10999999" />
+                </xs:restriction>
+            </xs:simpleType>
         </xs:union>
     </xs:simpleType>
     <xs:simpleType name="TypeObjectId">
@@ -13695,6 +13711,13 @@ As a bus address is not always needed, the default value can also be set to "fal
                     <xs:pattern value="[123456789]\d*" />
                     <xs:minInclusive value="1000000" />
                     <xs:maxInclusive value="9999999" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:unsignedInt">
+                    <xs:pattern value="[123456789]\d*" />
+                    <xs:minInclusive value="10000000" />
+                    <xs:maxInclusive value="10999999" />
                 </xs:restriction>
             </xs:simpleType>
         </xs:union>
