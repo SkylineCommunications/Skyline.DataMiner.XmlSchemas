@@ -354,16 +354,35 @@ DATE        VERSION   AUTHOR    COMMENTS
                 Added /Protocol/Settings/Setting@displayName attribute (DCP 300443) (RN 45928)
                 Added /Protocol/Settings/Setting/Text tag (DCP 300443) (RN 45928)
                 Added /Protocol/Edge tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script@id attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script@displayName attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script@guid attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument@name attribute (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument/SettingRef tag (DCP 300443) (RN 45928)
-                Added /Protocol/Scripts/Script/Arguments/Argument/SettingRef@id attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script@id attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script@displayName attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script@guid attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument@name attribute (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument/SettingRef tag (DCP 300443) (RN 45928)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument/SettingRef@id attribute (DCP 300443) (RN 45928)
+15/09/2026      Added /Protocol/Settings/Section (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Section/Setting (DCP 299714) (RN 46142)
+                Added /Protocol/Edge/Scripts/Script/Arguments/Argument/SettingRef@field attribute (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/UsernamePasswordCredential tag (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/TokenCredential tag (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/SNMPv3Credential tag (DCP 305720) (RN 46371)
+                Added /protocol/Settings/Setting/SNMPCommunityCredential tag (DCP 305720) (RN 46371)
+                Added /Protocol/Settings/Setting/DropDown tag (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/DropDown/Options tag (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/DropDown/Options/Option tag (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/DropDown/Options/Option@value tag (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/DropDown/Options/Option@displayName tag (DCP 299714) (RN 46142)
+                Added /Protocol/Settings/Setting/IPAddress tag (DCP 304355) (RN 46361)
+                Added /Protocol/Settings/Setting/IPPort tag (DCP 304355) (RN 46361)
+                Added /Protocol/Settings/Setting/Number tag (DCP 304355) (RN 46361)
+                Added /Protocol/Settings/Setting/Number/Range tag (DCP 304355) (RN 46361)
+                Added /Protocol/Settings/Setting/Number/Range/Low tag (DCP 304355) (RN 46361)
+                Added /Protocol/Settings/Setting/Number/Range/High tag (DCP 304355) (RN 46361)
+                Added /Protocol/Settings/Setting/Number/Decimals tag (DCP 304355) (RN 46361)
 *********************************************************************************
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skyline.be/protocol" xmlns="http://www.skyline.be/protocol" xmlns:dis="http://www.skyline.be/protocol" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -8752,48 +8771,36 @@ As a bus address is not always needed, the default value can also be set to "fal
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Setting" minOccurs="1" maxOccurs="unbounded">
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Setting" type="dis:ProtocolSetting">
                                 <xs:annotation>
                                     <xs:documentation>
                                         <![CDATA[Contains a protocol setting.]]>
                                     </xs:documentation>
                                 </xs:annotation>
-                                <xs:complexType>
-                                    <xs:choice>
-                                        <xs:element name="Text">
-                                            <xs:annotation>
-                                                <xs:documentation>
-                                                    <![CDATA[Specifies that the setting is a text input setting.]]>
-                                                </xs:documentation>
-                                            </xs:annotation>
-                                            <xs:complexType/>
-                                        </xs:element>
-                                    </xs:choice>
-                                    <xs:attribute name="id" type="dis:TypeNonEmptyString" use="required">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <![CDATA[Specifies the unique ID of the setting.]]>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:attribute>
-                                    <xs:attribute name="displayName" type="dis:TypeNonEmptyString" use="required">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <![CDATA[Specifies the name for this setting that will be shown to the user.]]>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:attribute>
-                                </xs:complexType>
                             </xs:element>
-                        </xs:sequence>
+                            <xs:element name="Section" type="dis:ProtocolSettingsSection">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <![CDATA[Groups related protocol settings under a section heading.]]>
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
                     </xs:complexType>
                     <xs:unique name="UniqueSettingId">
                         <xs:annotation>
                             <xs:documentation>The setting IDs must be unique.</xs:documentation>
                         </xs:annotation>
-                        <xs:selector xpath="dis:Setting" />
+                        <xs:selector xpath="dis:Setting | dis:Section/dis:Setting" />
                         <xs:field xpath="@id" />
+                    </xs:unique>
+                    <xs:unique name="UniqueSectionDisplayName">
+                        <xs:annotation>
+                            <xs:documentation>The section display names must be unique.</xs:documentation>
+                        </xs:annotation>
+                        <xs:selector xpath="dis:Section" />
+                        <xs:field xpath="@displayName" />
                     </xs:unique>
                 </xs:element>
                 <xs:element name="Edge" minOccurs="0" maxOccurs="1">
@@ -8848,6 +8855,13 @@ As a bus address is not always needed, the default value can also be set to "fal
                                                                                         <xs:annotation>
                                                                                             <xs:documentation>
                                                                                                 <![CDATA[Specifies the ID of the setting (as specified in /Protocol/Settings/Setting@id) whose value has to be used.]]>
+                                                                                            </xs:documentation>
+                                                                                        </xs:annotation>
+                                                                                    </xs:attribute>
+                                                                                    <xs:attribute name="field" type="dis:TypeNonEmptyString" use="optional">
+                                                                                        <xs:annotation>
+                                                                                            <xs:documentation>
+                                                                                                <![CDATA[Specifies a certain field that has to be selected out of the referenced setting.]]>
                                                                                             </xs:documentation>
                                                                                         </xs:annotation>
                                                                                     </xs:attribute>
@@ -9004,7 +9018,7 @@ As a bus address is not always needed, the default value can also be set to "fal
             <xs:annotation>
                 <xs:documentation>A setting must have a unique ID.</xs:documentation>
             </xs:annotation>
-            <xs:selector xpath="dis:Settings/dis:Setting" />
+            <xs:selector xpath="dis:Settings/dis:Setting | dis:Settings/dis:Section/dis:Setting" />
             <xs:field xpath="@id" />
         </xs:key>
         <xs:key name="triggerId">
@@ -9311,6 +9325,194 @@ As a bus address is not always needed, the default value can also be set to "fal
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>
+    <xs:complexType name="ProtocolSetting">
+        <xs:choice>
+            <xs:element name="Text" type="dis:EmptyType" >
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies a free-form text setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DropDown">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies a setting whose value is selected from a list of options.]]>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Options">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <![CDATA[Contains the options available for the dropdown setting.]]>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Option" minOccurs="1" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <![CDATA[Defines an option that can be selected.]]>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:attribute name="value" type="dis:TypeNonEmptyString" use="required">
+                                                <xs:annotation>
+                                                    <xs:documentation>
+                                                        <![CDATA[Specifies the value stored when this option is selected.]]>
+                                                    </xs:documentation>
+                                                </xs:annotation>
+                                            </xs:attribute>
+                                            <xs:attribute name="displayName" type="dis:TypeNonEmptyString" use="required">
+                                                <xs:annotation>
+                                                    <xs:documentation>
+                                                        <![CDATA[Specifies the name shown to the user for this option.]]>
+                                                    </xs:documentation>
+                                                </xs:annotation>
+                                            </xs:attribute>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                            <xs:unique name="UniqueDropDownOptionValue">
+                                <xs:annotation>
+                                    <xs:documentation>No duplicate values must occur among the dropdown options.</xs:documentation>
+                                </xs:annotation>
+                                <xs:selector xpath="dis:Option" />
+                                <xs:field xpath="@value" />
+                            </xs:unique>
+                            <xs:unique name="UniqueDropDownOptionDisplayName">
+                                <xs:annotation>
+                                    <xs:documentation>No duplicate display names must occur among the dropdown options.</xs:documentation>
+                                </xs:annotation>
+                                <xs:selector xpath="dis:Option" />
+                                <xs:field xpath="@displayName" />
+                            </xs:unique>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="UsernamePasswordCredential" type="dis:EmptyType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies a username and password credential setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TokenCredential" type="dis:EmptyType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies a token credential setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SNMPv3Credential" type="dis:EmptyType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies an SNMPv3 credential setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SNMPCommunityCredential" type="dis:EmptyType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies an SNMP community credential setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IPAddress" type="dis:EmptyType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies an IP address setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IPPort" type="dis:EmptyType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies an IP port setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Number">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Specifies a numeric setting.]]>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="Range" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <![CDATA[Constrains the values allowed for the numeric setting.]]>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Low" type="xs:decimal" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <![CDATA[Specifies the inclusive lower bound.]]>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="High" type="xs:decimal" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <![CDATA[Specifies the inclusive upper bound.]]>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Decimals" type="xs:unsignedInt" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <![CDATA[Specifies the number of decimal places supported by the setting.]]>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:all>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+        <xs:attribute name="id" type="dis:TypeNonEmptyString" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[Specifies the unique ID of the setting.]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="displayName" type="dis:TypeNonEmptyString" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[Specifies the name shown to the user for this setting.]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="ProtocolSettingsSection">
+        <xs:sequence>
+            <xs:element name="Setting" type="dis:ProtocolSetting" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[Contains a setting in this section.]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="displayName" type="dis:TypeNonEmptyString" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[Specifies the section name shown to the user.]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="EmptyType" />
     <!--<xs:simpleType name="EnumCompliancyKey">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CassandraReady"/>
@@ -16473,7 +16675,7 @@ As a bus address is not always needed, the default value can also be set to "fal
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+            <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="TypePositiveDuration">
