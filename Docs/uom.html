@@ -13,7 +13,6 @@
             --paper: #ffffff;
             --canvas: #ffffff;
             --accent: #0068a5;
-            --navy: #07122f;
         }
 
         * {
@@ -26,50 +25,6 @@
             color: var(--ink);
             background: var(--canvas);
             font: 16px/1.55 "Segoe UI", Arial, sans-serif;
-        }
-
-        .topbar {
-            height: 60px;
-            color: #fff;
-            background: var(--navy);
-        }
-
-        .topbar-inner {
-            width: min(1400px, calc(100% - 32px));
-            height: 100%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            color: #fff;
-            font-size: 1.35rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .brand-mark {
-            display: grid;
-            width: 36px;
-            height: 36px;
-            place-items: center;
-            border-radius: 50%;
-            color: #fff;
-            background: #126db3;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .brand small {
-            display: block;
-            margin-top: 3px;
-            color: #aab3c7;
-            font-size: 0.62rem;
-            font-weight: 400;
         }
 
         main {
@@ -224,14 +179,6 @@
     </style>
 </head>
 <body>
-    <nav class="topbar" aria-label="Primary">
-        <div class="topbar-inner">
-            <div class="brand">
-                <span class="brand-mark">d</span>
-                <span>dataminer<small>by Skyline Communications</small></span>
-            </div>
-        </div>
-    </nav>
     <main>
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <span>Schema reference</span><span>Protocol schema</span><span>Units</span>
