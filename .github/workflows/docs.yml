@@ -29,8 +29,8 @@ jobs:
     - name: Prepare website
       run: |
         mkdir _site
-        cp Docs/uom.html _site/
-        cp Protocol/uom.xsd _site/
+        cp ./Docs/uom.html _site/
+        cp ./Protocol/uom.xsd _site/
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
