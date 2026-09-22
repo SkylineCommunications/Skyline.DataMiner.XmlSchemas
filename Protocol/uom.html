@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DataMiner Units of Measurement</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #171717;
+            --muted: #5c6470;
+            --line: #d9dde3;
+            --paper: #ffffff;
+            --canvas: #ffffff;
+            --accent: #0068a5;
+            --navy: #07122f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-width: 320px;
+            margin: 0;
+            color: var(--ink);
+            background: var(--canvas);
+            font: 16px/1.55 "Segoe UI", Arial, sans-serif;
+        }
+
+        .topbar {
+            height: 60px;
+            color: #fff;
+            background: var(--navy);
+        }
+
+        .topbar-inner {
+            width: min(1400px, calc(100% - 32px));
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #fff;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .brand-mark {
+            display: grid;
+            width: 36px;
+            height: 36px;
+            place-items: center;
+            border-radius: 50%;
+            color: #fff;
+            background: #126db3;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .brand small {
+            display: block;
+            margin-top: 3px;
+            color: #aab3c7;
+            font-size: 0.62rem;
+            font-weight: 400;
+        }
+
+        main {
+            width: min(836px, calc(100% - 40px));
+            margin: 34px auto 64px;
+        }
+
+        .breadcrumbs {
+            margin-bottom: 44px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumbs span + span::before {
+            margin: 0 10px;
+            color: #9ca3ad;
+            content: "/";
+        }
+
+        header {
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            margin: 0 0 14px;
+            font-size: 2.35rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            line-height: 1.2;
+        }
+
+        .lead {
+            margin: 0 0 22px;
+            max-width: 760px;
+        }
+
+        .table-tools {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 12px;
+        }
+
+        #status {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
+        .controls {
+            display: flex;
+            width: min(100%, 300px);
+        }
+
+        input[type="search"] {
+            min-width: 0;
+            flex: 1;
+            border: 1px solid #b8bec7;
+            border-radius: 3px;
+            padding: 8px 11px;
+            color: var(--ink);
+            background: var(--paper);
+            font: inherit;
+        }
+
+        input[type="search"]:focus {
+            border-color: var(--accent);
+            outline: 2px solid rgb(0 104 165 / 18%);
+        }
+
+        .table-shell {
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: 0;
+            background: var(--paper);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            padding: 9px 12px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+            overflow-wrap: anywhere;
+        }
+
+        th {
+            color: var(--ink);
+            background: #f4f5f7;
+            font-weight: 600;
+        }
+
+        th:first-child,
+        td:first-child {
+            width: 32%;
+        }
+
+        td:first-child {
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        tbody tr:hover td {
+            background: #f5f9fc;
+        }
+
+        .empty {
+            padding: 48px 20px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                width: calc(100% - 28px);
+                margin: 24px auto 48px;
+            }
+
+            .breadcrumbs {
+                margin-bottom: 28px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .table-tools {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .controls {
+                width: 100%;
+            }
+
+            th,
+            td {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="topbar" aria-label="Primary">
+        <div class="topbar-inner">
+            <div class="brand">
+                <span class="brand-mark">d</span>
+                <span>dataminer<small>by Skyline Communications</small></span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <span>Schema reference</span><span>Protocol schema</span><span>Units</span>
+        </nav>
+        <header>
+            <h1>Units of measurement</h1>
+            <p class="lead">An overview of the units of measurement recognized by the DataMiner protocol schema.</p>
+            <div class="table-tools">
+                <p id="status" role="status">Loading uom.xsd...</p>
+                <div class="controls">
+                    <input id="search" type="search" placeholder="Filter units" aria-label="Filter units" disabled>
+                </div>
+            </div>
+        </header>
+        <section id="result" class="table-shell" aria-live="polite">
+            <div class="empty">Loading units...</div>
+        </section>
+    </main>
+
+    <script id="uom-transform" type="application/xml">
+        <xsl:stylesheet version="1.0"
+            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xsl:output method="html" omit-xml-declaration="yes" />
+            <xsl:template match="/">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Value</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select="//xs:simpleType[@name='UOM']//xs:enumeration">
+                            <tr>
+                                <td><xsl:value-of select="@value" /></td>
+                                <td><xsl:value-of select="xs:annotation/xs:documentation" /></td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+            </xsl:template>
+        </xsl:stylesheet>
+    </script>
+
+    <script>
+        const result = document.querySelector("#result");
+        const status = document.querySelector("#status");
+        const search = document.querySelector("#search");
+        const parser = new DOMParser();
+
+        function parseXml(source, label) {
+            const documentXml = parser.parseFromString(source, "application/xml");
+            const parseError = documentXml.querySelector("parsererror");
+            if (parseError) {
+                throw new Error(`${label} is not valid XML.`);
+            }
+
+            return documentXml;
+        }
+
+        function transform(source, label) {
+            const schema = parseXml(source, label);
+            const stylesheet = parseXml(
+                document.querySelector("#uom-transform").textContent,
+                "Embedded XSLT"
+            );
+            const processor = new XSLTProcessor();
+            processor.importStylesheet(stylesheet);
+
+            const fragment = processor.transformToFragment(schema, document);
+            const rowCount = fragment.querySelectorAll("tbody tr").length;
+            if (rowCount === 0) {
+                throw new Error("No UOM enumeration values were found in the selected schema.");
+            }
+
+            result.replaceChildren(fragment);
+            search.disabled = false;
+            search.value = "";
+            status.textContent = `${rowCount.toLocaleString()} units from ${label}`;
+        }
+
+        async function loadAdjacentSchema() {
+            try {
+                const response = await fetch(new URL("uom.xsd", window.location.href));
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                transform(await response.text(), "uom.xsd");
+            } catch (error) {
+                status.textContent = "Unable to load uom.xsd.";
+                result.innerHTML = '<div class="empty">Serve this directory over HTTP so the adjacent uom.xsd file can be loaded.</div>';
+            }
+        }
+
+        search.addEventListener("input", () => {
+            const query = search.value.trim().toLocaleLowerCase();
+            const rows = [...result.querySelectorAll("tbody tr")];
+            let visibleCount = 0;
+
+            for (const row of rows) {
+                const isVisible = row.textContent.toLocaleLowerCase().includes(query);
+                row.hidden = !isVisible;
+                visibleCount += Number(isVisible);
+            }
+
+            status.textContent = query
+                ? `${visibleCount.toLocaleString()} of ${rows.length.toLocaleString()} units`
+                : `${rows.length.toLocaleString()} units from uom.xsd`;
+        });
+
+        loadAdjacentSchema();
+    </script>
+</body>
+</html>
